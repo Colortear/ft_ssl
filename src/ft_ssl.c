@@ -1,13 +1,9 @@
-#include "../ft_ssl.h"
-#include "../options.h"
+#include "../include/ft_ssl.h"
 
-int     main(int argc, char **argv)
+t_ft_ssl    *create_entries(t_options *opt)
 {
-    t_options   opt;
-    t_ft_ssl    *ssl;
+    t_ft_ssl    *ret;
 
-    get_options(argc, argv, &opt);
-    ssl = create_entries(&opt);
-    print_format(&ssl, has_option('r'));
-    return 0;
+    ret = malloc(sizeof(t_ft_ssl));
+    while (opt->
 }

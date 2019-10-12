@@ -24,8 +24,6 @@ void    append_input_list_node(
         *list = append;
 }
 
-// account for the text pipe in
-
 void    destroy_input_list(struct s_list_input *list)
 {
     struct s_list_input *tmp;

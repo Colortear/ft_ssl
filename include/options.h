@@ -13,7 +13,7 @@ struct s_input_list {
 typedef struct s_options {
     int                 opt_takes_arg[OPT_TABLE_SIZE];
     int                 opt_table[OPT_TABLE_SIZE];
-    char                *args[OPT_TABLE_SIZE];
+    struct s_input_list *args[OPT_TABLE_SIZE];
     struct s_input_list *input_list;
 } t_options;
 

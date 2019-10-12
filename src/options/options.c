@@ -1,6 +1,6 @@
 #include "../include/options.h"
 
-void    init_t_options(t_options *opt)
+static void    init_t_options(t_options *opt)
 {
     int i;
 
@@ -14,9 +14,9 @@ void    init_t_options(t_options *opt)
     opt->input_list = NULL;
 }
 
-int     is_valid_option(char *s)
+static int     is_valid_option(char *s, char *table)
 {
-    return s != NULL && s[0] && s[1] && s[0] == '-';
+    return s != NULL && s[0] && s[1] && s[0] == '-' && table[s[1]];
 }
 
 void    get_options(int argc, char **args, t_options *opt)
@@ -32,7 +32,8 @@ void    get_options(int argc, char **args, t_options *opt)
     {
         if (take_as_arg)
         {
-            args[index] = argv[i];
+            if (!args[index])
+                args[index] = argv[i];
             take_as_arg = 0;
         }
         else if (is_valid_option(argv[i]))
