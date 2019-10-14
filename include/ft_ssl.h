@@ -3,7 +3,12 @@
 
 # include "options.h"
 
-# define REVERSE
+# define P 'p' % 26
+# define QUIET 'q' % 26
+# define REVERSE 'r' % 26
+# define STRING 's' % 26
+# define MD5 "md5"
+# define SHA256 "sha256"
 
 struct s_list {
     char            *input;

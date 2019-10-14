@@ -1,22 +1,22 @@
 #include "../../include/options.h"
 
-struct s_input_list *create_input_node(char *entry)
+t_input_list    *create__node(char *entry)
 {
-    struct s_input_list *ret;
+    t_input_list    *ret;
 
-    ret = malloc(sizeof(struct s_input_list));
+    ret = malloc(sizeof(t_input_list));
     ret->input = entry;
     ret->next = NULL;
     return ret;
 }
 
-void    append_input_list_node(
-        struct s_input_list **list,
-        struct s_input_list *append)
+void    append_input_list_node(t_input_list **list, t_input_list *append)
 {
+    t_input_list    *cur;
+
     if (list)
     {
-        while (list->next)
+        while ((*list)->next)
             cur = cur->next;
         cur->next = append;
     }
@@ -24,9 +24,9 @@ void    append_input_list_node(
         *list = append;
 }
 
-void    destroy_input_list(struct s_list_input *list)
+void    destroy_input_list(t_input_list *list)
 {
-    struct s_list_input *tmp;
+    t_input_list    *tmp;
 
     while (list) {
         tmp = list;
