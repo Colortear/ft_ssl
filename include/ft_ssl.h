@@ -9,16 +9,30 @@
 # define STRING 's' % 26
 # define MD5 "md5"
 # define SHA256 "sha256"
+# define MD5_DISPLAY "MD5"
+# define SHA256_DISPLAY "SHA256"
 
-struct s_list {
+# define STDIN_INPUT 1
+# define FILE_INPUT 2
+# define STRING_INPUT 3
+
+# define TRUE 1
+# define FALSE 0
+
+struct s_list
+{
     char            *input;
     char            *display_name;
     char            *processed_data;
+    int             should_free;
+    int             type;
     struct s_list   *next;
 };
 
-typedef struct      s_ft_ssl {
+typedef struct      s_ft_ssl
+{
     char            *(*hash)(char *input);
+    char            *to_display;
     struct s_list   *entries;
 }   t_ft_ssl;
 

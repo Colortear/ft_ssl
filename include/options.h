@@ -7,12 +7,14 @@
 
 #define OPT_TABLE_SIZE 26
 
-typedef struct  s_input_list {
+typedef struct  s_input_list
+{
     char                *input;
     struct s_input_list *next;
 }               t_input_list;
 
-typedef struct s_options {
+typedef struct s_options
+{
     int             opt_takes_arg[OPT_TABLE_SIZE];
     int             opt_table[OPT_TABLE_SIZE];
     t_input_list    *args[OPT_TABLE_SIZE];

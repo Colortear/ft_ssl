@@ -1,21 +1,11 @@
 #include "../include/util.h"
 
-size_t  strlen(char *s)
-{
-    int ret;
-
-    ret = 0;
-    while (s[ret])
-        ret++;
-    return ret;
-}
-
-void    putstr(char *s)
+void    ft_putstr(char *s)
 {
     write(1, s, strlen(s));
 }
 
-void    putstr_fd(char *s, int fd)
+void    ft_putstr_fd(char *s, int fd)
 {
     write(fd, s, strlen(s));
 }
@@ -34,14 +24,4 @@ void    mini_printf(char *fmt, int arg_num, ...)
         fmt++;
     }
     va_end(ap);
-}
-
-int     strcmp(char *s1, char *s2)
-{
-    while (*s1 == *s2)
-    {
-        s1++;
-        s2++;
-    }
-    return *s1 - *s2;
 }
